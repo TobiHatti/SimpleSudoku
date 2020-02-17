@@ -12,7 +12,7 @@ public class Solver
 	
 	public int GetBlock(int row, int column)
 	{
-		return (int) ((Math.floor(row / Math.sqrt(grid.length)) * 3) + Math.floor(column / Math.sqrt(grid.length)));
+		return (int) ((Math.floor(row / Math.sqrt(grid.length)) * Math.sqrt(grid.length)) + Math.floor(column / Math.sqrt(grid.length)));
 	}
 	
 	public int[][] Solve()
@@ -31,6 +31,7 @@ public class Solver
 		
 		while(!analyser.IsSolved() && failCtr < 3)
 		{
+			int j=0;
 			changeMade = false;
 			for(int row = 0; row < workGrid.length; row++)
 			{
@@ -43,11 +44,10 @@ public class Solver
 					{		
 						if(workGrid[row][col] == 0)
 						{
-							
 							rowCheckOK = analyser.CheckRow(row, n);
 							columnCheckOK = analyser.CheckColumn(col, n);
 							blockCheckOK = analyser.CheckBlock(GetBlock(row, col), n);
-							
+
 							if(rowCheckOK && columnCheckOK && blockCheckOK)
 							{
 								validNumbers.add(n);

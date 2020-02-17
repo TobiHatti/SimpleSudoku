@@ -36,10 +36,16 @@ public class Analyser
 		int blockColumn = blockIndex % gridBlocks;
 		int blockRow = (int) Math.floor(blockIndex / gridBlocks);
 		
+		
+		
 		for(int row = gridBlocks * blockRow; row < (gridBlocks * blockRow) + gridBlocks; row++)
-			for(int col = gridBlocks * blockRow; col < (gridBlocks * blockColumn) + gridBlocks; col++)
+		{
+			for(int col = gridBlocks * blockColumn; col < (gridBlocks * blockColumn) + gridBlocks; col++)
+			{
 				if(grid[row][col] == checkNumber) numberPossible = false;
-
+			}
+				
+		}
 		return numberPossible;
 	}
 	
