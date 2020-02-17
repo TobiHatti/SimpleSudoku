@@ -31,24 +31,25 @@ public class Analyser
 	
 	public boolean CheckBlock(int blockIndex, int checkNumber)
 	{
-		int[] block = new int[grid.length];
-		
+		boolean numberPossible = true;
 		int gridBlocks = (int) Math.sqrt(grid.length);
+		int blockColumn = blockIndex % gridBlocks;
+		int blockRow = (int) Math.floor(blockIndex / gridBlocks);
 		
-		int[] blockRows = new int[gridBlocks];
-		int[] blockColumns = new int[gridBlocks];
-		
-		for(int row = 0; row < gridBlocks; row++)
-		{
-			
-			
-			for(int col = 0; col < gridBlocks; col++)
-			{
-				
-			}
-		}
-		
-		return null;
+		for(int row = gridBlocks * blockRow; row < (gridBlocks * blockRow) + gridBlocks; row++)
+			for(int col = gridBlocks * blockRow; col < (gridBlocks * blockColumn) + gridBlocks; col++)
+				if(grid[row][col] == checkNumber) numberPossible = false;
+
+		return numberPossible;
 	}
 	
+	public boolean IsSolved()
+	{
+		boolean isSolved = true;
+		for(int row = 0; row < grid.length; row++)
+			for(int col = 0; col < grid.length; col++)
+				if(grid[row][col] == 0) isSolved = false;
+		
+		return isSolved;
+	}
 }
