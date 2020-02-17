@@ -35,9 +35,7 @@ public class Analyser
 		int gridBlocks = (int) Math.sqrt(grid.length);
 		int blockColumn = blockIndex % gridBlocks;
 		int blockRow = (int) Math.floor(blockIndex / gridBlocks);
-		
-		
-		
+
 		for(int row = gridBlocks * blockRow; row < (gridBlocks * blockRow) + gridBlocks; row++)
 		{
 			for(int col = gridBlocks * blockColumn; col < (gridBlocks * blockColumn) + gridBlocks; col++)
