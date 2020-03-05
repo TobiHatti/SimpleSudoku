@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleSudokuMain));
             this.rbcMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.pbxSudokuGrid = new System.Windows.Forms.PictureBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
+            this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.rbcMenu)).BeginInit();
             this.rbcMenu.SuspendLayout();
+            this.toolStripTabItem1.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).BeginInit();
+            this.toolStripEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcMenu
@@ -79,14 +85,15 @@
             // 
             // rbcMenu.ribbonPanel1
             // 
+            this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx1);
             this.toolStripTabItem1.Panel.Name = "ribbonPanel1";
             this.toolStripTabItem1.Panel.ScrollPosition = 0;
             this.toolStripTabItem1.Panel.TabIndex = 2;
-            this.toolStripTabItem1.Panel.Text = "toolStripTabItem1";
+            this.toolStripTabItem1.Panel.Text = "Start";
             this.toolStripTabItem1.Position = 0;
-            this.toolStripTabItem1.Size = new System.Drawing.Size(114, 30);
+            this.toolStripTabItem1.Size = new System.Drawing.Size(47, 30);
             this.toolStripTabItem1.Tag = "1";
-            this.toolStripTabItem1.Text = "toolStripTabItem1";
+            this.toolStripTabItem1.Text = "Start";
             // 
             // pbxSudokuGrid
             // 
@@ -103,6 +110,38 @@
             this.tmrUpdate.Enabled = true;
             this.tmrUpdate.Interval = 50;
             this.tmrUpdate.Tick += new System.EventHandler(this.tmrUpdate_Tick);
+            // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.AutoSize = false;
+            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx1.Size = new System.Drawing.Size(468, 64);
+            this.toolStripEx1.TabIndex = 0;
+            // 
+            // toolStripButton1
+            // 
+            this.rbcMenu.SetDescription(this.toolStripButton1, "Solve");
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(54, 47);
+            this.toolStripButton1.Text = "Solve";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
             // 
             // SimpleSudokuMain
             // 
@@ -122,7 +161,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.rbcMenu)).EndInit();
             this.rbcMenu.ResumeLayout(false);
             this.rbcMenu.PerformLayout();
+            this.toolStripTabItem1.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).EndInit();
+            this.toolStripEx1.ResumeLayout(false);
+            this.toolStripEx1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -133,6 +175,9 @@
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem1;
         private System.Windows.Forms.PictureBox pbxSudokuGrid;
         private System.Windows.Forms.Timer tmrUpdate;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
