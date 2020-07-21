@@ -38,3 +38,5 @@ C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\
 C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\bin\Debug\Syncfusion.SfListView.WinForms.xml
 C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\bin\Debug\Syncfusion.DataSource.WinForms.xml
 C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\obj\Debug\SimpleSudokuUI.SimpleSudokuMain.resources
+C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zivi\Desktop\Projects (GIT)\SimpleSudoku\SimpleSudokuUI\SimpleSudokuUI\bin\Debug\Newtonsoft.Json.xml

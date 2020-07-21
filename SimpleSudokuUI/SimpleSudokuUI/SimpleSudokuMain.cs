@@ -1,4 +1,5 @@
-﻿using Syncfusion.Windows.Forms;
+﻿using Newtonsoft.Json;
+using Syncfusion.Windows.Forms;
 using Syncfusion.Windows.Forms.Tools;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace SimpleSudokuUI
 {
     public partial class SimpleSudokuMain : RibbonForm
     {
-        int[][] SudokuGrid = new int[][] {
+        int[][] SudokuGrid2 = new int[][] {
             new int[] { 3,0,0,6,0,0,0,9,0 },
             new int[] { 0,4,0,0,2,0,0,5,0 },
             new int[] { 0,8,0,0,7,0,1,6,0 },
@@ -26,7 +27,7 @@ namespace SimpleSudokuUI
             new int[] { 0,3,0,0,0,5,0,0,8 }
         };
 
-        int[][] SudokuGrid2 = new int[][] {
+        int[][] SudokuGrid = new int[][] {
             new int[] {  1, 0, 0, 2, 3, 4, 0, 0,12, 0, 6, 0, 0, 0, 7, 0 },
             new int[] {  0, 0, 8, 0, 0, 0, 7, 0, 0, 3, 0, 0, 9,10, 6,11 },
             new int[] {  0,12, 0, 0,10, 0, 0, 1, 0,13, 0,11, 0, 0,14, 0 },
@@ -48,6 +49,19 @@ namespace SimpleSudokuUI
         public SimpleSudokuMain()
         {
             InitializeComponent();
+
+            for (int row = 0; row < SudokuGrid.Length; row++)
+            {
+                for(int col = 0; col < SudokuGrid.Length; col++)
+                {
+                    int b = (int)(Math.Floor((double)row / SudokuGrid.Length) + Math.Floor(col / Math.Sqrt(SudokuGrid.Length)));
+
+                    int a = (int)((Math.Floor(row / Math.Sqrt(SudokuGrid.Length)) * Math.Sqrt(SudokuGrid.Length)) + Math.Floor(col / Math.Sqrt(SudokuGrid.Length)));
+
+
+                    if (a != b) MessageBox.Show("Error : G1: " + a + "  G2: " + b);
+                }
+            }
         }
 
         private float GetCellWidth(int pGridSize) => pbxSudokuGrid.Width / SudokuGrid.Length;
@@ -100,34 +114,37 @@ namespace SimpleSudokuUI
         private void FillNumbers(Graphics g, int[][] sudokuGrid)
         {
             int fontSize = 0;
-            int numberOffsetX = 0;
-            int numberOffsetY = 0;
 
             switch(sudokuGrid.Length)
             {
-                case 9:
-                    fontSize = 30;
-                    numberOffsetX = 11;
-                    numberOffsetY = 4;
-                    break;
-                case 16:
-                    fontSize = 17;
-                    numberOffsetX = 0;
-                    numberOffsetY = 0;
-                    break;
+                case 4: fontSize = 30; break;
+                case 9: fontSize = 30; break;
+                case 16: fontSize = 17; break;
+                case 25: fontSize = 17; break;
+                case 36: fontSize = 17; break;
+                case 49: fontSize = 17; break;
+                case 64: fontSize = 17; break;
+                case 81: fontSize = 17; break;
+                case 100: fontSize = 17; break;
             }
 
-            for(int row = 0; row < sudokuGrid.Length; row++)
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
+
+            for (int row = 0; row < sudokuGrid.Length; row++)
             {
                 for(int col = 0; col < sudokuGrid[row].Length; col++)
                 {
                     if (sudokuGrid[row][col] != 0)
                     {
+
                         g.DrawString(
                             Convert.ToString(sudokuGrid[row][col]),
                             new Font("Calibri", fontSize),
                             Brushes.Black,
-                            new PointF(numberOffsetX + GetCellWidth(sudokuGrid.Length) * col, numberOffsetY + GetCellHeight(sudokuGrid.Length) * row)
+                            new PointF(GetCellWidth(sudokuGrid.Length) * col + GetCellWidth(sudokuGrid.Length)/2, GetCellHeight(sudokuGrid.Length) * row + GetCellHeight(sudokuGrid.Length) / 2),
+                            stringFormat
                         );
                     }
                 }
@@ -143,7 +160,11 @@ namespace SimpleSudokuUI
         private void tmrUpdate_Tick(object sender, EventArgs e)
         {
             pbxSudokuGrid.Invalidate();
-            Debug.Print("Draw");
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

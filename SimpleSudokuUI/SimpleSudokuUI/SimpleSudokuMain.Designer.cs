@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleSudokuMain));
             this.rbcMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
-            this.pbxSudokuGrid = new System.Windows.Forms.PictureBox();
-            this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pbxSudokuGrid = new System.Windows.Forms.PictureBox();
+            this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.rbcMenu)).BeginInit();
             this.rbcMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).BeginInit();
             this.toolStripEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // rbcMenu
@@ -95,22 +95,6 @@
             this.toolStripTabItem1.Tag = "1";
             this.toolStripTabItem1.Text = "Start";
             // 
-            // pbxSudokuGrid
-            // 
-            this.pbxSudokuGrid.BackColor = System.Drawing.Color.White;
-            this.pbxSudokuGrid.Location = new System.Drawing.Point(5, 139);
-            this.pbxSudokuGrid.Name = "pbxSudokuGrid";
-            this.pbxSudokuGrid.Size = new System.Drawing.Size(500, 500);
-            this.pbxSudokuGrid.TabIndex = 1;
-            this.pbxSudokuGrid.TabStop = false;
-            this.pbxSudokuGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxSudokuGrid_Paint);
-            // 
-            // tmrUpdate
-            // 
-            this.tmrUpdate.Enabled = true;
-            this.tmrUpdate.Interval = 50;
-            this.tmrUpdate.Tick += new System.EventHandler(this.tmrUpdate_Tick);
-            // 
             // toolStripEx1
             // 
             this.toolStripEx1.AutoSize = false;
@@ -137,11 +121,28 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(54, 47);
             this.toolStripButton1.Text = "Solve";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
+            // 
+            // pbxSudokuGrid
+            // 
+            this.pbxSudokuGrid.BackColor = System.Drawing.Color.White;
+            this.pbxSudokuGrid.Location = new System.Drawing.Point(5, 139);
+            this.pbxSudokuGrid.Name = "pbxSudokuGrid";
+            this.pbxSudokuGrid.Size = new System.Drawing.Size(500, 500);
+            this.pbxSudokuGrid.TabIndex = 1;
+            this.pbxSudokuGrid.TabStop = false;
+            this.pbxSudokuGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxSudokuGrid_Paint);
+            // 
+            // tmrUpdate
+            // 
+            this.tmrUpdate.Enabled = true;
+            this.tmrUpdate.Interval = 50;
+            this.tmrUpdate.Tick += new System.EventHandler(this.tmrUpdate_Tick);
             // 
             // SimpleSudokuMain
             // 
@@ -162,9 +163,9 @@
             this.rbcMenu.ResumeLayout(false);
             this.rbcMenu.PerformLayout();
             this.toolStripTabItem1.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).EndInit();
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSudokuGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
